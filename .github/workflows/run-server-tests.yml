@@ -3,6 +3,8 @@ name: Run Server Tests
 on:
   pull_request:
     branches: [master, development]
+    paths:
+      - "server/**"
 
 jobs:
   test:
@@ -20,10 +22,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install npm dependencies
+        working-directory: ./server
         run: npm ci
 
       - name: Lint code
+        working-directory: ./server
         run: npm run lint
 
       - name: Run tests
+        working-directory: ./server
         run: npm run test
