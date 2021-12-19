@@ -25,9 +25,9 @@ jobs:
         working-directory: ./web-client
         run: npm run build
 
-      - name: Move web-client build output to server/web-client directory
+      - name: Move web-client build output to server/web-client-build directory
         working-directory: ./web-client
-        run: mv build ../server/web-client/
+        run: mv build ../server/web-client-build/
 
       - name: Install npm dependencies for server
         working-directory: ./server
