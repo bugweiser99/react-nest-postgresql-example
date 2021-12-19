@@ -11,11 +11,9 @@ jobs:
     steps:
       - name: Copy repository
         uses: actions/checkout@v2
-        with:
-          path: './server'
 
       - name: Deploy to heroku
-        uses: akhileshns/heroku-deploy@v3.0.5
+        uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: 'react-nest-postgresql-example'
