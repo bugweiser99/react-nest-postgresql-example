@@ -7,7 +7,7 @@ import { join } from 'path/posix';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'web-client-build'),
+      rootPath: join(__dirname, '..', 'web-client', 'build'),
     }),
   ],
   controllers: [AppController],
