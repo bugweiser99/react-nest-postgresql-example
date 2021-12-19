@@ -18,7 +18,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install npm dependencies for web-client
-        working-directory: ./web-cient
+        working-directory: ./web-client
         run: npm ci
 
       - name: Build web-client
