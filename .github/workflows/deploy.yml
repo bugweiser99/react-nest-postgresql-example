@@ -18,4 +18,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: 'react-nest-postgresql-example'
           heroku_email: 'luka.mat99@gmail.com'
-          appdir: 'server'
+          appdir: server
