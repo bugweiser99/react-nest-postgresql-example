@@ -5,7 +5,11 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path/posix';
 
 @Module({
-  imports: [],
+  imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'web-client-build'),
+    }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
