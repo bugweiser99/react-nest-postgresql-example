@@ -12,31 +12,6 @@ jobs:
       - name: Copy repository
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install npm dependencies for web-client
-        working-directory: ./web-client
-        run: npm ci
-
-      - name: Build web-client
-        working-directory: ./web-client
-        run: npm run build
-
-      - name: Move web-client build output to server/web-client-build directory
-        working-directory: ./web-client
-        run: mv build ../server/web-client-build/
-
-      - name: Install npm dependencies for server
-        working-directory: ./server
-        run: npm ci
-
-      - name: Build server
-        working-directory: ./server
-        run: npm run build
-
       - name: Deploy to heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
