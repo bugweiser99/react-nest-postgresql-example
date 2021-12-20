@@ -12,6 +12,11 @@ jobs:
       - name: Copy repository
         uses: actions/checkout@v2
 
+      - name: Move web-client to server directory
+        run: mv web-client server/web-client/
+
+      - run: ls
+
       - name: Deploy to heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
