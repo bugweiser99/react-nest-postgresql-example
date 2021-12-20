@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
 
   useEffect(() => {
     const fetchText = async () => {
-      const response = await fetch("/api/app");
+      const response = await fetch('/api/app');
       setText(await response.text());
     };
 
     fetchText();
   }, []);
 
-  return <div className="text-blue-500">{text}</div>;
+  return <div className='text-purple-500'>{text}</div>;
 }
 
 export default App;
