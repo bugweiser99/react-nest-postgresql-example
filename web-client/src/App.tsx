@@ -12,7 +12,7 @@ function App() {
     fetchText();
   }, []);
 
-  return <div className='text-purple-500'>{text}</div>;
+  return <div className='text-yellow-500 bg-purple-500'>{text}</div>;
 }
 
 export default App;
